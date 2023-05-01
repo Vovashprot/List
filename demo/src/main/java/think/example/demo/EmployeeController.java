@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
     @GetMapping(path = "/employee/add")
-    public String addEmployee(
+    public String createEmployee(
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName
     )
     {
-        return
-                "";
+
+        return "Добавлен сотрудник " + firstName +" "+ lastName;
     }
+
 }
