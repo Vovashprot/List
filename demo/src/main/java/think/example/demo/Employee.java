@@ -8,13 +8,14 @@ public class Employee {
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
-    }
+        this.lastName = lastName;
 
-    public String lastName() {
+    }
+    public String getLastName() {
         return lastName;
     }
 
-    public String getfirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -22,15 +23,15 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                ", firstName='" + firstName + '\'' +
-                ", lastName =" + lastName +
+                ", firstName='" + getFirstName() + '\'' +
+                ", lastName =" + getLastName() +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
         return Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName);
     }
